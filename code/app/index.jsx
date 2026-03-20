@@ -7,6 +7,11 @@ import { Colors } from '../constants/colors'
 import LogoDarkMode from '../assets/img/cyberwave-logo-darkmode.png'
 import LogoLightMode from '../assets/img/cyberwave-logo-lightmode.png'
 
+// themed components
+import ThemedView from '../components/ThemedView'
+import ThemedText from '../components/ThemedText'
+import Spacer from '../components/Spacer'
+
 
 const Home = () => {
 
@@ -21,14 +26,16 @@ const Home = () => {
   }
 
   return (
-    <View style={[styles.container, {backgroundColor: theme.background}]}>
+    <ThemedView style={[styles.container]}>
       
       <Image source={Logo} style={styles.img} resizeMode='contain'></Image>
+      <Spacer height={20} />
 
-      <Text style={styles.title}>The Most Innovative Academic Conference</Text>      
-      <Text style={styles.subTitle}>
+      <ThemedText title={true} style={styles.title}>The Most Innovative Academic Conference</ThemedText>      
+      <ThemedText style={styles.subTitle}>
         Dive into the world of cybersecurity, telecommunication and AI!
-      </Text>
+      </ThemedText>
+      <Spacer />
 
       <View>
 
@@ -50,7 +57,7 @@ const Home = () => {
 
       </View>
   
-    </View>
+    </ThemedView>
   )
 }
 
@@ -79,7 +86,6 @@ const styles = StyleSheet.create({
     color: '#000',
   },
   img: {
-    marginVertical: 20,
     height: 50,
     width: '70%'
   },
