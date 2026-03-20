@@ -1,13 +1,27 @@
 // represents the main page (react component)
 // <View> - acts as a <div> component
 
-import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native'
+import { StyleSheet, Text, View, Image, TouchableOpacity, useColorScheme } from 'react-native'
 import { Link } from 'expo-router'
-import Logo from '../assets/img/cyberwave-logo.png'
+import { Colors } from '../constants/colors'
+import LogoDarkMode from '../assets/img/cyberwave-logo-darkmode.png'
+import LogoLightMode from '../assets/img/cyberwave-logo-lightmode.png'
+
 
 const Home = () => {
+
+  const colorScheme = useColorScheme()
+  const theme = Colors[colorScheme] ?? Colors.dark
+  
+  let Logo = null
+  if (colorScheme == 'light') {
+    Logo = LogoLightMode
+  } else {
+    Logo = LogoDarkMode
+  }
+
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, {backgroundColor: theme.background}]}>
       
       <Image source={Logo} style={styles.img} resizeMode='contain'></Image>
 
@@ -45,7 +59,6 @@ export default Home
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#ffffff',
     alignItems: 'center',
     justifyContent: 'center',
   },
