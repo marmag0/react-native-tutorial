@@ -45,7 +45,7 @@ const Home = () => {
       </View>
 
       <ThemedText style={styles.subTitle}>
-        To create your account, you'll need to be registered for the event. If you haven't got your ticket yet, get it on:{'\n'}
+        To create your account, you'll need to be registered for the event. If you haven't got your ticket yet, get it for free on:{'\n'}
         <Link href='https://cyberwave.agh.edu.pl' style={styles.textLink}>
           cyberwave.agh.edu.pl
         </Link>
@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
     width: 140,
     backgroundColor: '#eee',
     padding: 20,
-    borderRadius: 25,
+    borderRadius: 20,
     alignItems: 'center',
     shadowColor: '#000',
     shadowOffset: { width: 4, height: 4 },
